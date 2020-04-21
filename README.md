@@ -72,3 +72,34 @@ OUTPUTS
     
     PS > Test-MaintenanceWindow -StartMaintenance '23:00' -EndMaintenance '05:00'
 ```
+
+Example output of the ``$Hours`` object for a 23:00..06:00 maintenance window:
+
+```
+h00 : True
+h01 : True
+h02 : True
+h03 : True
+h04 : True
+h05 : True
+h06 :
+h07 :
+h08 :
+h09 :
+h10 :
+h11 :
+h12 :
+h13 :
+h14 :
+h15 :
+h16 :
+h17 :
+h18 :
+h19 :
+h20 :
+h21 :
+h22 :
+h23 : True
+```
+
+``h06`` is not ``$true`` because if it were, then the window would go all the way to 07:00.
