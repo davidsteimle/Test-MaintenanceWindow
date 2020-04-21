@@ -1,5 +1,18 @@
 # Test-MaintenanceWindow
 
+For scripted deployments I often need to define a maintenance window, as we do not enforce them in SCCM.
+
+Superficially it would be easy to do somethinf like:
+
+```powershell
+if(($CurrentTime -gt $StartMaint) -and ($CurrentTime -lt $EndMaint)){
+    # Do something
+}
+```
+
+But if your maintenance windows starts at 11pm and ends at 6am, then no attempt between 11pm and 12am will work.
+
+The script here creates an object of 24 "hours", which are set to ``$true`` if they are in the maintenance window, then the current time is comparesd to its hour to see if the maintenance window is active.
 
 ```
 NAME
