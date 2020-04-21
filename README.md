@@ -2,7 +2,7 @@
 
 For scripted deployments I often need to define a maintenance window, as we do not enforce them in SCCM.
 
-Superficially it would be easy to do somethinf like:
+Superficially it would be easy to do something like:
 
 ```powershell
 if(($CurrentTime -gt $StartMaint) -and ($CurrentTime -lt $EndMaint)){
