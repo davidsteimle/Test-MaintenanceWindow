@@ -12,7 +12,9 @@ if(($CurrentTime -gt $StartMaint) -and ($CurrentTime -lt $EndMaint)){
 
 But if your maintenance windows starts at 11pm and ends at 6am, then no attempt between 11pm and 12am will work.
 
-The script here creates an object of 24 "hours", which are set to ``$true`` if they are in the maintenance window, then the current time is comparesd to its hour to see if the maintenance window is active.
+The script here creates an object of 24 "hours", which are set to ``$true`` if they are in the maintenance window, then the current hour is compared to its hour to see if the maintenance window is active.
+
+Minutes are ignored, but our parent script used an ``HH:mm`` format for time, which more easily casts as ``datetime``.
 
 ```
 NAME
